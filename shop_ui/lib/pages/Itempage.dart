@@ -7,11 +7,40 @@ class ItemPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: const Text(
+          'Item Page',
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+
+
+
+
+      body: Column(
         children: [
-       ItemPageAppBar()
+          Container (
+            height: 300,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/44.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          // Add more widgets here as needed
         ],
       ),
+     
     );
   }
 }
