@@ -2,6 +2,7 @@ import 'package:clippy_flutter/arc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:recap/widgets/cartbottomappbar.dart';
 import 'package:recap/widgets/itempageappbar.dart';
 
 class ItemPage extends StatelessWidget {
@@ -192,38 +193,20 @@ class ItemPage extends StatelessWidget {
                     color: Colors.blue,
                   ),
                 ),
-                Spacer(),
-                Container(
-                  height: 30,
-                  width: 30,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(
-                      color: Colors.red,
-                      width: 2,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.red,
-                        spreadRadius: 2,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Icon(
-                    CupertinoIcons.minus,
-                    size: 18,
-                  ),
-                ),
-                SizedBox(width: 5),
+              ],
+            ),
+          ),
+          SizedBox(height: 5),
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Row(
+              children: [
                 Text(
-                  '42',
+                  'Color:',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: Colors.blue,
                   ),
                 ),
                 SizedBox(width: 5),
@@ -232,30 +215,83 @@ class ItemPage extends StatelessWidget {
                   width: 30,
                   decoration: BoxDecoration(
                     color: Colors.blue,
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(
-                      color: Colors.red,
-                      width: 2,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.red,
-                        spreadRadius: 2,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Icon(
-                    CupertinoIcons.add,
-                    size: 18,
+                    shape: BoxShape.circle,
                   ),
                 ),
+
+
+SizedBox(width: 3),
+                Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.black54,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+
+SizedBox(width: 3), // Space between the circle and the text
+
+                Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.purple,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+
+SizedBox(width: 3),
+
+                Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.amber,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+
+
+SizedBox(width: 3),
+
+                Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+
+
+SizedBox(width: 3),
+                Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+SizedBox(width: 3),
+                Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.brown,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+
+
+
               ],
             ),
           ),
         ],
       ),
+      
     );
   }
 }
