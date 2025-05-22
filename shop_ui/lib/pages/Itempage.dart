@@ -1,5 +1,6 @@
 import 'package:clippy_flutter/arc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:recap/widgets/itempageappbar.dart';
 
 class ItemPage extends StatelessWidget {
@@ -40,11 +41,7 @@ class ItemPage extends StatelessWidget {
                       //centers the text
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                       // centers the text:
-
-                       
-
-                      
+                        color: Colors.white,
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
                       ),
@@ -55,6 +52,35 @@ class ItemPage extends StatelessWidget {
               ),
             ),
           ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              RatingBar.builder(
+                initialRating: 4,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemSize: 20,
+                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                itemBuilder: (context, _) => Icon(
+                  Icons.favorite,
+                  color: Colors.blue,
+                ),
+                onRatingUpdate: (rating) {
+                  print(rating);
+                },
+              ),
+
+
+              Row(
+                children: [
+                  
+                ],
+              )
+            ],
+          )
         ],
       ),
     );
