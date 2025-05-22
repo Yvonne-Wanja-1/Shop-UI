@@ -15,10 +15,10 @@ class ItemPage extends StatelessWidget {
           ItemPageAppBar(),
           Container(
             margin: EdgeInsets.all(25),
-            height: 300, // Added height
+            height: 300,
             width: double.infinity,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20), // Reduced radius
+              borderRadius: BorderRadius.circular(20),
               image: DecorationImage(
                 image: AssetImage('images/44.jpg'),
                 fit: BoxFit.cover,
@@ -73,13 +73,11 @@ class ItemPage extends StatelessWidget {
                     print(rating);
                   },
                 ),
-
-                SizedBox(height: 5,),
                 Row(
                   children: [
                     Container(
                       height: 30,
-                      width: 30, // Fixed width
+                      width: 30,
                       decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(30),
@@ -100,7 +98,6 @@ class ItemPage extends StatelessWidget {
                         CupertinoIcons.minus,
                       ),
                     ),
-
                     SizedBox(width: 5),
                     Text(
                       '3',
@@ -111,9 +108,9 @@ class ItemPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 5),
-                     Container(
+                    Container(
                       height: 30,
-                      width: 30, // Fixed width
+                      width: 30,
                       decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(30),
@@ -134,13 +131,22 @@ class ItemPage extends StatelessWidget {
                         CupertinoIcons.add,
                       ),
                     ),
-
-
-
-                  
                   ],
                 ),
               ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Text(
+              'Golden shoes are footwear distinguished by their shimmering, metallic gold color, often associated with luxury, glamour, and celebration. They can be made from a variety of materials, including leather, satin, synthetic fabrics, or even glitter-covered surfaces, and are often accented with embellishments like rhinestones, sequins, or metallic threads.',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.normal,
+                color: Colors.blue,
+                fontStyle: FontStyle.italic,
+                fontFamily: 'Arial',
+              ),
             ),
           ),
         ],
