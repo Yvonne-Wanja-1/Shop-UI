@@ -40,11 +40,7 @@ class ItemPage extends StatelessWidget {
                       //centers the text
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                       // centers the text:
-
-                       
-
-                      
+                        color: Colors.white,
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
                       ),
@@ -55,6 +51,13 @@ class ItemPage extends StatelessWidget {
               ),
             ),
           ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              
+            ],
+          )
         ],
       ),
     );
