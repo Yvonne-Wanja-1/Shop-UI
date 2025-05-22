@@ -1,3 +1,4 @@
+import 'package:clippy_flutter/arc.dart';
 import 'package:flutter/material.dart';
 import 'package:recap/widgets/itempageappbar.dart';
 
@@ -7,40 +8,55 @@ class ItemPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: const Text(
-          'Item Page',
-          style: TextStyle(color: Colors.black),
-        ),
-      ),
-
-
-
-
-      body: Column(
+      body: ListView(
         children: [
-          Container (
-            height: 300,
+          ItemPageAppBar(),
+          Container(
+            margin: EdgeInsets.all(25),
+            height: 400,
             width: double.infinity,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(100)),
               image: DecorationImage(
                 image: AssetImage('images/44.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          // Add more widgets here as needed
+          Arc(
+            edge: Edge.TOP,
+            arcType: ArcType.CONVEX,
+            height: 30,
+            child: Container(
+              color: Colors.blue,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 50), // Adds spacing at the top
+                    Text(
+                      'Product Title',
+                      //centers the text
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                       // centers the text:
+
+                       
+
+                      
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 20), // Adds spacing at the bottom
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
-     
     );
   }
 }
