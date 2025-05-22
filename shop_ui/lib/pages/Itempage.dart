@@ -1,4 +1,5 @@
 import 'package:clippy_flutter/arc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:recap/widgets/itempageappbar.dart';
@@ -14,10 +15,10 @@ class ItemPage extends StatelessWidget {
           ItemPageAppBar(),
           Container(
             margin: EdgeInsets.all(25),
-            height: 400,
+            height: 300, // Added height
             width: double.infinity,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(100)),
+              borderRadius: BorderRadius.circular(20), // Reduced radius
               image: DecorationImage(
                 image: AssetImage('images/44.jpg'),
                 fit: BoxFit.cover,
@@ -35,10 +36,9 @@ class ItemPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 50), // Adds spacing at the top
+                    SizedBox(height: 50),
                     Text(
                       'Product Title',
-                      //centers the text
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
@@ -46,41 +46,103 @@ class ItemPage extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 20), // Adds spacing at the bottom
+                    SizedBox(height: 20),
                   ],
                 ),
               ),
             ),
           ),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              RatingBar.builder(
-                initialRating: 4,
-                minRating: 1,
-                direction: Axis.horizontal,
-                allowHalfRating: true,
-                itemCount: 5,
-                itemSize: 20,
-                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                itemBuilder: (context, _) => Icon(
-                  Icons.favorite,
-                  color: Colors.blue,
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                RatingBar.builder(
+                  initialRating: 4,
+                  minRating: 1,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemSize: 20,
+                  itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                  itemBuilder: (context, _) => Icon(
+                    Icons.favorite,
+                    color: Colors.blue,
+                  ),
+                  onRatingUpdate: (rating) {
+                    print(rating);
+                  },
                 ),
-                onRatingUpdate: (rating) {
-                  print(rating);
-                },
-              ),
+
+                SizedBox(height: 5,),
+                Row(
+                  children: [
+                    Container(
+                      height: 30,
+                      width: 30, // Fixed width
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border.all(
+                          color: Colors.red,
+                          width: 2,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.red,
+                            spreadRadius: 2,
+                            blurRadius: 7,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        CupertinoIcons.minus,
+                      ),
+                    ),
+
+                    SizedBox(width: 5),
+                    Text(
+                      '3',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(width: 5),
+                     Container(
+                      height: 30,
+                      width: 30, // Fixed width
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border.all(
+                          color: Colors.red,
+                          width: 2,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.red,
+                            spreadRadius: 2,
+                            blurRadius: 7,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        CupertinoIcons.add,
+                      ),
+                    ),
 
 
-              Row(
-                children: [
+
                   
-                ],
-              )
-            ],
-          )
+                  ],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
